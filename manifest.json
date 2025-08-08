@@ -1,0 +1,20 @@
+{
+  "name": "WyreStorm AV Designer",
+  "short_name": "AV Designer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#006837",
+  "icons": [
+    {
+      "src": "assets/wyrestorm-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/wyrestorm-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
