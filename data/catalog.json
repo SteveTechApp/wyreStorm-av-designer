@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "sku": "MX-0402-MST", "name": "4x2 HDMI Matrix Switcher", "tags": ["matrix"] },
+    { "sku": "SW-0501-HDV", "name": "5x1 HDMI Switcher", "tags": ["switcher"] },
+    { "sku": "TX-SW-0501-HDBT", "name": "HDBaseT Transmitter", "tags": ["hdbaset-tx"] },
+    { "sku": "RX-70-4K-SCL", "name": "HDBaseT Receiver", "tags": ["hdbaset-rx"] },
+    { "sku": "CAB-HDMI-2M", "name": "HDMI Cable 2m", "tags": ["hdmi-cable"] },
+    { "sku": "SW-200-UC", "name": "USB-C/HDMI UC Switcher", "tags": ["uc-switch"] }
+  ]
+}

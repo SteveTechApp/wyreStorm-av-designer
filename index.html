@@ -14,29 +14,55 @@
     <h1>🎛️ WyreStorm AV Design Tool</h1>
 
     <section>
-      <h2>Room Setup</h2>
-      <select id="roomType">
-        <option>Meeting Room</option>
-        <option>Lecture Hall</option>
-        <option>Huddle Space</option>
-      </select>
-      <select id="useCase">
-        <option>USB Video Conferencing</option>
-        <option>Wireless Presentation</option>
-      </select>
-    </section>
-
-    <section>
-      <h2>Add Products</h2>
-      <button onclick="addToBoM('TX-SW-0501-HDBT', 350)">TX-SW-0501-HDBT</button>
-      <button onclick="addToBoM('RX-70-4K-SCL', 180)">RX-70-4K-SCL</button>
-      <button onclick="addToBoM('MX-0402-MST', 580)">MX-0402-MST</button>
+      <h2>Scenario</h2>
+      <div class="grid">
+        <label>Room Type
+          <select id="roomType">
+            <option>Meeting Room</option>
+            <option>Lecture Hall</option>
+            <option>Huddle Space</option>
+          </select>
+        </label>
+        <label>Use Case
+          <select id="useCase">
+            <option>USB Video Conferencing</option>
+            <option>Wireless Presentation</option>
+            <option>Digital Signage</option>
+          </select>
+        </label>
+        <label>Displays
+          <input id="numDisplays" type="number" min="1" value="1" />
+        </label>
+        <label>Sources
+          <input id="numSources" type="number" min="1" value="1" />
+        </label>
+        <label>Max Cable Distance (m)
+          <input id="maxCableDistance" type="number" min="0" value="5" />
+        </label>
+        <label>Signal Type
+          <select id="signalType">
+            <option>HDMI</option>
+            <option>HDBaseT</option>
+            <option>IP</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button id="btnRecommend">Recommend Products</button>
+        <button id="btnSchematic">Generate Schematic</button>
+        <button id="btnProposal">Download Proposal (HTML)</button>
+      </div>
     </section>
 
     <section>
       <h2>Bill of Materials</h2>
       <ul id="bomList"></ul>
-      <p>Total: £<span id="total">0</span></p>
+      <p>Total Items: <span id="totalItems">0</span></p>
+    </section>
+
+    <section>
+      <h2>Schematic Preview</h2>
+      <div id="schematicContainer"></div>
     </section>
   </main>
   <script src="app.js"></script>
