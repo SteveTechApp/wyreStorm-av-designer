@@ -1,0 +1,96 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121833;
+  --bubble-me: #2b5cff;
+  --bubble-them: #2a2f45;
+  --text: #e8ecff;
+  --muted: #98a1c0;
+  --accent: #7bd389;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% 0%, #1a2152 0%, #090d1f 60%, #060914 100%);
+}
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 12px;
+  padding: 16px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 { font-size: 20px; margin: 0; }
+.quick-links { display: flex; gap: 8px; }
+.quick-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  background: rgba(123, 211, 137, 0.12);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.user-setup {
+  background: rgba(18, 24, 51, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+}
+.field { display: grid; gap: 6px; }
+label { font-size: 12px; color: var(--muted); }
+input, select, button {
+  height: 40px;
+  background: #0f1430;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0 10px;
+}
+button { background: var(--bubble-me); border: none; }
+button:hover { filter: brightness(1.1); }
+
+.chat.hidden { display: none; }
+.chat { display: grid; grid-template-rows: 1fr auto; gap: 8px; }
+.messages {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 2px;
+}
+.msg { display: grid; gap: 2px; }
+.msg.me { align-items: end; }
+.msg.them { align-items: start; }
+.meta { font-size: 11px; color: var(--muted); padding: 0 8px; }
+.bubble {
+  max-width: 80ch;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--bubble-them);
+}
+.msg.me .bubble { background: var(--bubble-me); }
+.note { margin-top: 6px; font-size: 11px; color: var(--muted); }
+.composer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+footer { color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (max-width: 600px) {
+  .user-setup { grid-template-columns: 1fr; }
+  .bubble { max-width: 90%; }
+}
