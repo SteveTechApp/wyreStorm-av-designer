@@ -7,8 +7,19 @@ function loadCatalog() {
   return JSON.parse(raw);
 }
 
-export function selectProductsForScenario(scenario) {
+function getUnitPrice(product, priceTier) {
+  const prices = product.prices || {};
+  const byTier = prices[priceTier];
+  if (typeof byTier === "number") return byTier;
+  if (typeof prices.dealer === "number") return prices.dealer;
+  if (typeof prices.msrp === "number") return prices.msrp;
+  return 0;
+}
+
+export function selectProductsForScenario(scenario, options = {}) {
+  const { priceTier = "dealer" } = options;
   const catalog = loadCatalog();
+  const { currency = "GBP" } = catalog;
   const bom = [];
 
   const {
@@ -19,7 +30,6 @@ export function selectProductsForScenario(scenario) {
     signalType = "HDMI"
   } = scenario;
 
-  // Core logic
   const needsMatrix = numSources > 1 && numDisplays > 1;
   const longRun = maxCableDistanceMeters > 40;
 
@@ -35,9 +45,8 @@ export function selectProductsForScenario(scenario) {
     const tx = catalog.products.find(p => p.tags.includes("hdbaset-tx"));
     const rx = catalog.products.find(p => p.tags.includes("hdbaset-rx"));
     if (tx && rx) {
-      const count = numDisplays;
       bom.push({ sku: tx.sku, name: tx.name, qty: numSources });
-      bom.push({ sku: rx.sku, name: rx.name, qty: count });
+      bom.push({ sku: rx.sku, name: rx.name, qty: numDisplays });
     }
   }
 
@@ -46,13 +55,11 @@ export function selectProductsForScenario(scenario) {
     if (usbSwitcher) bom.push({ sku: usbSwitcher.sku, name: usbSwitcher.name, qty: 1 });
   }
 
-  // Displays and sources cabling (HDMI cables)
   const hdmiCable = catalog.products.find(p => p.tags.includes("hdmi-cable"));
   if (hdmiCable) {
     bom.push({ sku: hdmiCable.sku, name: hdmiCable.name, qty: numSources + numDisplays });
   }
 
-  // De-duplicate SKUs and sum qty
   const merged = Object.values(
     bom.reduce((acc, item) => {
       const key = item.sku;
@@ -62,8 +69,21 @@ export function selectProductsForScenario(scenario) {
     }, {})
   );
 
+  // Attach pricing
+  const priced = merged.map(item => {
+    const product = catalog.products.find(p => p.sku === item.sku) || {};
+    const unitPrice = getUnitPrice(product, priceTier);
+    const lineTotal = unitPrice * item.qty;
+    return { ...item, unitPrice, lineTotal };
+  });
+
+  const grandTotal = priced.reduce((sum, i) => sum + i.lineTotal, 0);
+
   return {
-    bom: merged,
+    currency,
+    priceTier,
+    bom: priced,
+    grandTotal,
     notes: [
       longRun ? "Long cable runs detected; HDBaseT extenders recommended." : "",
       needsMatrix ? "Multiple sources/displays; matrix selected." : "",

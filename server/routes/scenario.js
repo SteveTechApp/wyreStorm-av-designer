@@ -10,7 +10,8 @@ const ScenarioSchema = z.object({
   numDisplays: z.number().int().min(1),
   numSources: z.number().int().min(1),
   maxCableDistanceMeters: z.number().min(0),
-  signalType: z.string().optional().default("HDMI")
+  signalType: z.string().optional().default("HDMI"),
+  priceTier: z.enum(["dealer2", "dealer", "msrp"]).optional().default("dealer")
 });
 
 router.post("/select", (req, res) => {
@@ -18,7 +19,8 @@ router.post("/select", (req, res) => {
   if (!parse.success) {
     return res.status(400).json({ error: "Invalid scenario", details: parse.error.flatten() });
   }
-  const result = selectProductsForScenario(parse.data);
+  const { priceTier, ...scenario } = parse.data;
+  const result = selectProductsForScenario(scenario, { priceTier });
   res.json({ scenario: parse.data, ...result });
 });
 

@@ -46,6 +46,13 @@
             <option>IP</option>
           </select>
         </label>
+        <label>Price Tier
+          <select id="priceTier">
+            <option value="dealer">Dealer</option>
+            <option value="dealer2">Dealer 2%</option>
+            <option value="msrp">MSRP</option>
+          </select>
+        </label>
       </div>
       <div>
         <button id="btnRecommend">Recommend Products</button>
@@ -57,12 +64,22 @@
     <section>
       <h2>Bill of Materials</h2>
       <ul id="bomList"></ul>
-      <p>Total Items: <span id="totalItems">0</span></p>
+      <p>
+        Total Items: <span id="totalItems">0</span>
+        &nbsp; | &nbsp; Total Cost: <span id="currency">GBP</span> <span id="totalCost">0.00</span>
+      </p>
     </section>
 
     <section>
       <h2>Schematic Preview</h2>
       <div id="schematicContainer"></div>
+    </section>
+
+    <section>
+      <h2>Price List Upload (JSON)</h2>
+      <p>Upload JSON with structure: { "items": [{ "sku": "...", "dealer2": 0, "dealer": 0, "msrp": 0 }], "currency": "GBP" }</p>
+      <input type="file" id="priceFile" accept="application/json" />
+      <button id="btnUploadPrices">Upload Pricelist</button>
     </section>
   </main>
   <script src="app.js"></script>
