@@ -1,10 +1,74 @@
 {
+  "currency": "GBP",
   "products": [
-    { "sku": "MX-0402-MST", "name": "4x2 HDMI Matrix Switcher", "tags": ["matrix"] },
-    { "sku": "SW-0501-HDV", "name": "5x1 HDMI Switcher", "tags": ["switcher"] },
-    { "sku": "TX-SW-0501-HDBT", "name": "HDBaseT Transmitter", "tags": ["hdbaset-tx"] },
-    { "sku": "RX-70-4K-SCL", "name": "HDBaseT Receiver", "tags": ["hdbaset-rx"] },
-    { "sku": "CAB-HDMI-2M", "name": "HDMI Cable 2m", "tags": ["hdmi-cable"] },
-    { "sku": "SW-200-UC", "name": "USB-C/HDMI UC Switcher", "tags": ["uc-switch"] }
+    { "sku": "MX-0402-MST", "name": "Synergy 4K60 HDR 4x2 HDMI & USB-C Matrix Switcher with MST", "tags": ["matrix", "presentation"] },
+
+    { "sku": "SW-0204-VW", "name": "4K60 4-Output Video Wall Processor (1x4, 2x2)", "tags": ["video-processor", "video-wall"] , "prices": {"dealer2": 544, "dealer": 533, "msrp": 1065}},
+    { "sku": "SW-0206-VW", "name": "4K60 6-Output Video Wall Processor", "tags": ["video-processor", "video-wall"], "prices": {"dealer2": 944, "dealer": 925, "msrp": 1849}},
+    { "sku": "NHD-0401-MV", "name": "NetworkHD 4-Input 4K60 Multiview Switcher", "tags": ["video-processor", "multiview", "networkhd"], "prices": {"dealer2": 479, "dealer": 469, "msrp": 937}},
+
+    { "sku": "NHD-300-TX", "name": "1080p60 Live Streaming Encoder", "tags": ["networkhd", "ip-encoder", "h26x"], "prices": {"dealer2": 407, "dealer": 399, "msrp": 797}},
+    { "sku": "NHD-120-TX", "name": "4K30 Encoder | PoE | IR & RS232", "tags": ["networkhd", "ip-encoder", "h26x"], "prices": {"dealer2": 311, "dealer": 305, "msrp": 610}},
+    { "sku": "NHD-120-RX", "name": "4K30 Decoder | PoE | Video Wall", "tags": ["networkhd", "ip-decoder", "h26x"], "prices": {"dealer2": 311, "dealer": 305, "msrp": 610}},
+    { "sku": "NHD-120-IW-TX", "name": "4K30 2-Gang In-Wall Encoder", "tags": ["networkhd", "ip-encoder", "h26x", "in-wall"], "prices": {"dealer2": 352, "dealer": 345, "msrp": 691}},
+    { "sku": "NHD-124-TX", "name": "4K30 Quad Encoder", "tags": ["networkhd", "ip-encoder", "h26x"], "prices": {"dealer2": 1069, "dealer": 1048, "msrp": 2096}},
+    { "sku": "NHD-150-RX", "name": "4K30 Decoder | 4K60 Output | 9-Window Multiview", "tags": ["networkhd", "ip-decoder", "h26x", "multiview"], "prices": {"dealer2": 891, "dealer": 873, "msrp": 1746}},
+
+    { "sku": "NHD-400-E-TX", "name": "Lite 4K60 4:2:0 Encoder | 1GbE | HDR | PoE | IR", "tags": ["networkhd-400", "ip-encoder", "jpeg2000"], "prices": {"dealer2": 336, "dealer": 329, "msrp": 658}},
+    { "sku": "NHD-400-E-RX", "name": "Lite 4K60 4:2:0 Decoder | 1GbE | HDR | PoE", "tags": ["networkhd-400", "ip-decoder", "jpeg2000"], "prices": {"dealer2": 336, "dealer": 329, "msrp": 658}},
+    { "sku": "NHD-400-TX", "name": "4K60 4:2:0 Encoder | 1GbE | USB 2.0 | HDR", "tags": ["networkhd-400", "ip-encoder", "jpeg2000"], "prices": {"dealer2": 397, "dealer": 389, "msrp": 778}},
+    { "sku": "NHD-400-RX", "name": "4K60 4:2:0 Decoder | 1GbE | USB 2.0 | HDR", "tags": ["networkhd-400", "ip-decoder", "jpeg2000"], "prices": {"dealer2": 397, "dealer": 389, "msrp": 778}},
+
+    { "sku": "NHD-500-E-TX", "name": "Lite 4K60 4:4:4 Encoder | 1GbE | Dolby Vision & HDR", "tags": ["networkhd-500", "ip-encoder", "jpeg2000"], "prices": {"dealer2": 405, "dealer": 397, "msrp": 793}},
+    { "sku": "NHD-500-E-RX", "name": "Lite 4K60 4:4:4 Decoder | 1GbE | Dolby Vision & HDR", "tags": ["networkhd-500", "ip-decoder", "jpeg2000"], "prices": {"dealer2": 405, "dealer": 397, "msrp": 793}},
+    { "sku": "NHD-500-TX", "name": "4K60 4:4:4 Encoder | 1GbE | Dolby Vision & HDR | USB 2.0", "tags": ["networkhd-500", "ip-encoder", "jpeg2000"], "prices": {"dealer2": 537, "dealer": 526, "msrp": 1052}},
+    { "sku": "NHD-500-RX", "name": "4K60 4:4:4 Decoder | 1GbE | Dolby Vision & HDR | USB 2.0", "tags": ["networkhd-500", "ip-decoder", "jpeg2000"], "prices": {"dealer2": 537, "dealer": 526, "msrp": 1052}},
+    { "sku": "NHD-510-TX", "name": "4K60 4:4:4 Encoder | HDMI & USB-C Input | PoE+ | Dante AV-A", "tags": ["networkhd-500", "ip-encoder", "dante"], "prices": {"dealer2": 705, "dealer": 691, "msrp": 1381}},
+    { "sku": "NHD-500-DNT-TX", "name": "4K60 4:4:4 Encoder | 2GbE RJ45 + SFP | Dante AES67", "tags": ["networkhd-500", "ip-encoder", "dante"], "prices": {"dealer2": 624, "dealer": 612, "msrp": 1224}},
+    { "sku": "NHD-500-IW-TX", "name": "4K60 4:4:4 2-Gang In-Wall Encoder | HDMI & USB-C", "tags": ["networkhd-500", "ip-encoder", "in-wall"], "prices": {"dealer2": 697, "dealer": 683, "msrp": 1365}},
+
+    { "sku": "NHD-600-TRX", "name": "4K60 4:4:4 SDVoE Transceiver | 10G RJ45", "tags": ["sdvoe", "ip-transceiver"], "prices": {"dealer2": 607, "dealer": 595, "msrp": 1189}},
+    { "sku": "NHD-600-TRXF", "name": "4K60 4:4:4 SDVoE Fiber Transceiver | 10G SFP+", "tags": ["sdvoe", "ip-transceiver"], "prices": {"dealer2": 789, "dealer": 773, "msrp": 1546}},
+    { "sku": "NHD-610-TX-V2", "name": "4K60 4:4:4 SDVoE Encoder | 10G RJ45 | Dante/AES67", "tags": ["sdvoe", "ip-encoder", "dante"], "prices": {"dealer2": 955, "dealer": 936, "msrp": 1872}},
+    { "sku": "NHD-610-TX", "name": "4K60 4:4:4 SDVoE Encoder | 10G RJ45 | USB 2.0", "tags": ["sdvoe", "ip-encoder"], "prices": {"dealer2": 955, "dealer": 936, "msrp": 1872}},
+    { "sku": "NHD-610-RX", "name": "4K60 4:4:4 SDVoE Decoder | 10G RJ45", "tags": ["sdvoe", "ip-decoder"], "prices": {"dealer2": 816, "dealer": 800, "msrp": 1600}},
+
+    { "sku": "NHD-CTL-PRO-V2", "name": "Pro Controller for NetworkHD Series", "tags": ["controller", "networkhd"], "prices": {"dealer2": 480, "dealer": 470, "msrp": 940}},
+    { "sku": "NHD-USB-TRX", "name": "USB 2.0 over IP Transceiver | 1GbE", "tags": ["usb-over-ip", "networkhd"], "prices": {"dealer2": 235, "dealer": 230, "msrp": 459}},
+
+    { "sku": "APO-100-UC", "name": "Apollo Video-speakerphone | USB-C", "tags": ["uc", "speakerphone"], "prices": {"dealer2": 279, "dealer": 273, "msrp": 545}},
+    { "sku": "APO-200-UC", "name": "Apollo Video-speakerphone switcher | USB-C & HDMI", "tags": ["uc", "uc-switch", "switcher"], "prices": {"dealer2": 420, "dealer": 412, "msrp": 823}},
+    { "sku": "APO-210-UC", "name": "Apollo Video-speakerphone switcher | HDMI & HDBaseT Out", "tags": ["uc", "uc-switch", "hdbaset"], "prices": {"dealer2": 638, "dealer": 625, "msrp": 1250}},
+    { "sku": "CAM-210-PTZ", "name": "1080p60 PTZ Camera | USB 3.0 | Network Streaming", "tags": ["uc", "camera"], "prices": {"dealer2": 507, "dealer": 497, "msrp": 995}},
+    { "sku": "CAM-210-NDI-PTZ", "name": "1080p60 PTZ Camera | NDI", "tags": ["uc", "camera"], "prices": {"dealer2": 581, "dealer": 569, "msrp": 1137}},
+
+    { "sku": "EX-70-G2", "name": "4K60 4:2:0 HDBaseT Extender Set | 70m", "tags": ["hdbaset", "extender-kit"], "prices": {"dealer2": 129, "dealer": 126, "msrp": 252}},
+    { "sku": "EX-100-G2", "name": "4K60 4:2:0 HDBaseT Extender Set | 100m", "tags": ["hdbaset", "extender-kit"], "prices": {"dealer2": 234, "dealer": 230, "msrp": 459}},
+    { "sku": "EX-35-H2", "name": "4K60 4:4:4 HDBaseT Extender Set | 35m", "tags": ["hdbaset", "extender-kit"], "prices": {"dealer2": 205, "dealer": 201, "msrp": 402}},
+    { "sku": "EX-70-H2", "name": "4K60 4:4:4 HDBaseT Extender Set | 70m/100m", "tags": ["hdbaset", "extender-kit"], "prices": {"dealer2": 296, "dealer": 290, "msrp": 580}},
+
+    { "sku": "RX-70-4K", "name": "4K60 4:2:0 HDBaseT Receiver | PoH", "tags": ["hdbaset-rx"], "prices": {"dealer2": 188, "dealer": 184, "msrp": 367}},
+    { "sku": "RX-70-4K-SCL", "name": "4K60 4:2:0 HDBaseT Scaling Receiver | PoH", "tags": ["hdbaset-rx"], "prices": {"dealer2": 352, "dealer": 345, "msrp": 690}},
+
+    { "sku": "TX-35-IW", "name": "4K60 4:2:0 HDBaseT Single Gang In-Wall Transmitter", "tags": ["hdbaset-tx", "in-wall"], "prices": {"dealer2": 129, "dealer": 126, "msrp": 252}},
+    { "sku": "RX-35-POH", "name": "4K60 4:2:0 HDBaseT Receiver | PoH", "tags": ["hdbaset-rx"], "prices": {"dealer2": 156, "dealer": 153, "msrp": 306}},
+
+    { "sku": "SW-130-TX-UK", "name": "3-Input 4K60 4:2:0 In-wall HDBaseT Switcher", "tags": ["switcher", "presentation", "hdbaset", "in-wall"], "prices": {"dealer2": 293, "dealer": 287, "msrp": 573}},
+    { "sku": "SW-510-TX", "name": "Synergy 4-input 4K60 4:2:0 HDBaseT Switcher", "tags": ["switcher", "presentation", "hdbaset"], "prices": {"dealer2": 517, "dealer": 507, "msrp": 1013}},
+    { "sku": "SW-220-TX-W", "name": "Synergy 2-Input 4K30 Switcher | Airplay & Miracast", "tags": ["switcher", "uc-switch", "wireless"], "prices": {"dealer2": 408, "dealer": 400, "msrp": 801}},
+
+    { "sku": "MX-0403-H3-MST", "name": "Synergy 4K60 HDR 4x3 HDMI & USB-C Matrix with HDBT 3.0 Output", "tags": ["matrix", "presentation", "hdbaset"] , "prices": {"dealer2": 866, "dealer": 849, "msrp": 1698}},
+
+    { "sku": "EXP-SW-0401-H2", "name": "4K60 4:4:4 4x1 HDMI Switcher", "tags": ["switcher", "hdmi"] , "prices": {"dealer2": 59, "dealer": 58, "msrp": 115}},
+    { "sku": "EXP-MX-0402-H2", "name": "4K60 4:4:4 4x2 HDMI Matrix Switch", "tags": ["matrix", "hdmi"], "prices": {"dealer2": 101, "dealer": 99, "msrp": 197}},
+
+    { "sku": "EXP-4KUHD-2.0", "name": "2m HDMI 2.0 Cable | 18Gbps 4K60", "tags": ["hdmi-cable", "cable"], "prices": {"dealer2": 4.8, "dealer": 4.7, "msrp": 9.5}},
+    { "sku": "CAB-HAOC-15", "name": "15m HDMI 2.0 Active Optical Cable", "tags": ["hdmi-aoc", "cable"], "prices": {"dealer2": 48, "dealer": 47, "msrp": 95}},
+
+    { "sku": "TS-280-EU", "name": "2-Gang 2.8\" Touchscreen Controller for Presentation Switcher Solutions", "tags": ["controller", "touch"] , "prices": {"dealer2": 186, "dealer": 182, "msrp": 363}},
+    { "sku": "SYN-KEY10", "name": "Synergy 10-button Keypad Controller (US back box)", "tags": ["controller", "keypad"] , "prices": {"dealer2": 241, "dealer": 236, "msrp": 472}},
+    { "sku": "SYN-TOUCH10", "name": "Synergy 10.1” All-In-One Touchpad IP Controller | PoE+", "tags": ["controller", "touch"] , "prices": {"dealer2": 581, "dealer": 569, "msrp": 1138}},
+    { "sku": "SYN-CTL-HUB", "name": "Ethernet Protocol Converter for SYN-TOUCH10", "tags": ["control-hub"] , "prices": {"dealer2": 97, "dealer": 95, "msrp": 135}},
+    { "sku": "NetworkHD Touch", "name": "Free iPad & Android Control App for NetworkHD 100, 200 & 400 Series", "tags": ["app", "controller"], "prices": {"dealer2": null, "dealer": null, "msrp": null}}
   ]
 }
