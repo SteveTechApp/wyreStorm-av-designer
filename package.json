@@ -1,23 +1,28 @@
 {
-  "name": "wyrestorm-av-designer",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
+  "name": "translator-chat",
+  "version": "1.0.0",
+  "description": "Simple two-person chat with automatic translation (English ↔ Hungarian)",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand"
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "tunnel": "node tunnel.js"
   },
+  "keywords": [
+    "chat",
+    "translate",
+    "websocket",
+    "express",
+    "mobile"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.0",
-    "supertest": "^7.0.0"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "localtunnel": "^2.0.2",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.18.0"
   }
 }
